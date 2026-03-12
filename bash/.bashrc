@@ -80,7 +80,7 @@ fi
 . "$HOME/.cargo/env"
 
 # pnpm
-export PNPM_HOME="/home/crim/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -177,7 +177,7 @@ cd () {
 alias edit='hx'
 alias shx='sudo hx'
 alias ebrc='edit ~/.bashrc'
-alias brighten='/home/crim/.local/bin/increase_webcam_exposure.sh'
+alias brighten='$HOME/.local/bin/increase_webcam_exposure.sh'
 alias checkcommand="type -t"
 alias pwdtail="pwd|awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'"
 alias zj='zellij'
@@ -364,5 +364,5 @@ alias yt-hist="ytfzf -t -c H"
 #     eval "$(starship init bash)"
 # fi
 
-export PATH="/home/crim/.pixi/bin:$PATH"
+export PATH="$HOME/.pixi/bin:$PATH"
 eval "$(pixi completion --shell bash)"
