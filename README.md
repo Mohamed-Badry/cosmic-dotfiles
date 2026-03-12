@@ -14,6 +14,9 @@ Requires `git` and `stow` (`sudo apt install stow`).
 *   [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)
 *   [FiraCode Nerd Font](https://www.nerdfonts.com/)
 
+**Note on Wallpapers & Absolute Paths:**
+The install script will automatically replace hardcoded paths to `/home/crim` in the Cosmic configurations with your local `$HOME` path. Wallpapers are included in the repository and will be automatically stowed to `~/.local/share/backgrounds/`. If they do not appear immediately, you may need to re-select them in your Cosmic Appearance settings or log out and back in to refresh the desktop session.
+
 ```bash
 git clone https://github.com/Mohamed-Badry/cosmic-dotfiles.git ~/cosmic-dotfiles
 cd ~/cosmic-dotfiles

@@ -4,7 +4,7 @@
             Super,
         ],
         key: "v",
-    ): Spawn("/home/crim/.local/bin/toggle-clipboard.sh"),
+    ): Spawn("toggle-clipboard.sh"),
     (
         modifiers: [
             Super,
@@ -23,7 +23,7 @@
             Shift,
         ],
         key: "c",
-    ): Spawn("/home/crim/.local/bin/color-picker.sh"),
+    ): Spawn("color-picker.sh"),
     (
         modifiers: [
             Super,
@@ -55,7 +55,7 @@
             Super,
         ],
         key: "grave",
-    ): Spawn("/home/crim/.local/bin/toggle-scratchpad.sh"),
+    ): Spawn("toggle-scratchpad.sh"),
     (
         modifiers: [
             Super,
@@ -88,7 +88,7 @@
         ],
         key: "Print",
         description: Some("OBS Toggle Record"),
-    ): Spawn("/home/crim/.local/bin/obs-toggle-record.sh"),
+    ): Spawn("obs-toggle-record.sh"),
     (
         modifiers: [
             Super,
@@ -107,7 +107,7 @@
             Shift,
         ],
         key: "v",
-    ): Spawn("/home/crim/.local/bin/manage-clipboard.sh"),
+    ): Spawn("manage-clipboard.sh"),
     (
         modifiers: [
             Super,

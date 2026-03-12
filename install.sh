@@ -27,7 +27,12 @@ PACKAGES=(
     "cosmic"
     "vscode"
     "scripts"
+    "wallpapers"
 )
+
+# Update hardcoded paths in Cosmic config to match the current user's home directory
+echo "Updating hardcoded paths for the current user ($HOME)..."
+find cosmic/.config/cosmic -type f -exec sed -i "s|/home/crim|$HOME|g" {} +
 
 for pkg in "${PACKAGES[@]}"; do
     if [ -d "$pkg" ]; then

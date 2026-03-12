@@ -1,6 +1,6 @@
 (
     output: "eDP-1",
-    source: Path("/home/crim/Pictures/Wallpapers/Catppuccin Mocha/evening_sky.png"),
+    source: Path("/home/crim/.local/share/backgrounds/evening_sky.png"),
     filter_by_theme: false,
     rotation_frequency: 300,
     filter_method: Lanczos,
