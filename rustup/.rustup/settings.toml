@@ -1,6 +1,0 @@
-version = "12"
-default_toolchain = "stable-x86_64-unknown-linux-gnu"
-profile = "default"
-
-[overrides]
-"/home/crim/Projects/mt7921hell" = "1.85.1-x86_64-unknown-linux-gnu"

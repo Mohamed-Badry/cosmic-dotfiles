@@ -26,7 +26,6 @@ PACKAGES=(
     "rofi"
     "cosmic"
     "vscode"
-    "rustup"
     "scripts"
 )
 
