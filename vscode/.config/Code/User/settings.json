@@ -4,7 +4,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "window.menuBarVisibility": "toggle",
   "workbench.colorCustomizations": {
-    // Base background (your requested #121216)
+    // Base background 
     "editor.background": "#121216",
     "sideBar.background": "#121216",
     "activityBar.background": "#121216",
@@ -88,5 +88,5 @@
   // Telemetry - disabled
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
-  "terminal.integrated.accessibleViewFocusOnCommandExecution": true
+  "accessibility.verbosity.terminal": false
 }

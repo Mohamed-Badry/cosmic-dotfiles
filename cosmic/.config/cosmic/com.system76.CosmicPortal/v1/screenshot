@@ -1,5 +1,5 @@
 (
-    save_location: Clipboard,
+    save_location: Pictures,
     choice: Output(Some("eDP-1")),
     last_rectangle: Some((
         left: 72,
