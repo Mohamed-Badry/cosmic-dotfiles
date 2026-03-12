@@ -134,9 +134,14 @@ bind "set completion-ignore-case on" 2>/dev/null
 # Show auto-completion list automatically
 bind "set show-all-if-ambiguous On" 2>/dev/null
 
-# Custom directories
+# --- User-Specific Directories ---
+# Used by custom aliases and functions (like the enhanced 'cd'). 
+# If these paths don't exist on your machine, they will gracefully fall back to $HOME.
 export start_dir="/media/crim/Productivity/Programming"
+[ ! -d "$start_dir" ] && export start_dir="$HOME"
+
 export android_dir="/storage/emulated/0/Linux"
+[ ! -d "$android_dir" ] && export android_dir="$HOME"
 
 # JAVA ALIASES (Keeping these as they seem specific to your workflow)
 javacp () {
@@ -308,12 +313,6 @@ trim() {
 	var="${var#${var%%[![:space:]]*}}"
 	var="${var%${var##*[![:space:]]}}"
 	echo -n "$var"
-}
-
-# Backup function
-backup_home() {
-	BACKUPDIR=/media/crim/Productivity/Programming/dotfiles/Cosmic
-	rsync -aP --delete --exclude-from=/home/$USER/.rsync-homedir-local.txt /home/$USER/ $BACKUPDIR/
 }
 
 # Bat (Cat replacement)
