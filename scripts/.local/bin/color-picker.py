@@ -30,7 +30,7 @@ def get_latest_screenshot():
     subprocess.run(["cosmic-screenshot", "--interactive=false", "--save-dir", "/tmp"], check=True)
     
     # Give fs a moment?
-    time.sleep(0.5)
+    time.sleep(0.05)
     
     after_files = set(glob.glob('/tmp/Screenshot_*.png'))
     new_files = after_files - before_files
