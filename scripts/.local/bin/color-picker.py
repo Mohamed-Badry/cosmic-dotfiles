@@ -1,4 +1,4 @@
-#!/usr/bin/env -S ~/.uv-global/bin/python3
+#!/usr/bin/env python3
 
 import subprocess
 import tkinter as tk
