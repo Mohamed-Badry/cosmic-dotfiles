@@ -15,8 +15,8 @@ Requires `git` and `stow` (`sudo apt install stow`).
 *   [FiraCode Nerd Font](https://www.nerdfonts.com/)
 
 ```bash
-git clone https://github.com/your-username/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone https://github.com/Mohamed-Badry/cosmic-dotfiles.git ~/cosmic-dotfiles
+cd ~/cosmic-dotfiles
 ./install.sh
 ```
 
@@ -25,7 +25,7 @@ cd ~/dotfiles
 Packages are structured to mirror the home directory. Stow creates symlinks from these directories into `~`.
 
 ```text
-~/dotfiles/
+~/cosmic-dotfiles/
 ├── bash/             # .bashrc, .profile, etc.
 ├── cosmic/           # .config/cosmic/...
 ├── helix/            # .config/helix/...
@@ -37,7 +37,7 @@ Packages are structured to mirror the home directory. Stow creates symlinks from
 
 To add a new tool (e.g., `nvim`) to the stow setup:
 
-1. Create package structure: `mkdir -p ~/dotfiles/nvim/.config`
-2. Move existing config: `mv ~/.config/nvim ~/dotfiles/nvim/.config/`
-3. Symlink it: `cd ~/dotfiles && stow nvim`
+1. Create package structure: `mkdir -p ~/cosmic-dotfiles/nvim/.config`
+2. Move existing config: `mv ~/.config/nvim ~/cosmic-dotfiles/nvim/.config/`
+3. Symlink it: `cd ~/cosmic-dotfiles && stow nvim`
 4. Update script: Add `"nvim"` to the `PACKAGES` array in `install.sh`.
