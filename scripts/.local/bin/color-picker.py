@@ -52,7 +52,10 @@ class ColorPicker(tk.Tk):
         self.title("Color Picker")
         
         # Fullscreen to cover everything
+        self.overrideredirect(True)
         self.attributes('-fullscreen', True)
+        self.attributes('-topmost', True)
+        self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
         self.config(cursor="crosshair")
         
         # Bind escape to exit
