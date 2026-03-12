@@ -54,7 +54,7 @@ Controls target the *active* or *most recent* media player rather than sending c
 
 ### Utilities
 *   **`Super + Shift + C`:** Launch Python color picker.
-*   **`Super + \`` [Grave]:** Toggle Dropdown Scratchpad. Spawns/hides a floating WezTerm instance running a persistent Zellij session named `scratchpad`.
+*   **``Super + ` [Grave]``:** Toggle Dropdown Scratchpad. Spawns/hides a floating WezTerm instance running a persistent Zellij session named `scratchpad`.
 *   **`Super + Shift + PrintScreen`:** Toggle OBS Recording. Silently starts/stops recording via websockets using an isolated `uv` python environment.
 
 ### Window Management (Vim-style)
