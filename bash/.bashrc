@@ -177,7 +177,6 @@ cd () {
 alias edit='hx'
 alias shx='sudo hx'
 alias ebrc='edit ~/.bashrc'
-alias brighten='$HOME/.local/bin/increase_webcam_exposure.sh'
 alias checkcommand="type -t"
 alias pwdtail="pwd|awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'"
 alias zj='zellij'
