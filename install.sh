@@ -28,6 +28,8 @@ PACKAGES=(
     "vscode"
     "scripts"
     "wallpapers"
+    "fastfetch"
+    "fuzzel"
 )
 
 # Update hardcoded paths in Cosmic config to match the current user's home directory
