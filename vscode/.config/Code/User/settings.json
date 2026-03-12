@@ -1,0 +1,92 @@
+{
+  // Theme & UI
+  "workbench.colorTheme": "Horizon Italic",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorCustomizations": {
+    // Base background (your requested #121216)
+    "editor.background": "#121216",
+    "sideBar.background": "#121216",
+    "activityBar.background": "#121216",
+    "panel.background": "#121216",
+    "titleBar.activeBackground": "#121216",
+    "titleBar.inactiveBackground": "#0f0f11",
+    "editorLineNumber.foreground": "#9aa0a6",
+    "editorLineNumber.activeForeground": "#E95678",
+
+    // Subtle highlights / accents in same family to preserve contrast
+    "editor.lineHighlightBackground": "#1b1b21",
+    "editor.lineHighlightBorder": "#22222a",
+    "editor.selectionBackground": "#2a2a3a",
+    "editor.selectionHighlightBackground": "#6f4268",
+
+    // Tabs, group headers - darker to separate from editor
+    "editorGroupHeader.tabsBackground": "#121216",
+    "tab.activeBackground": "#0a0a0c",
+    "tab.inactiveBackground": "#121216",
+    "tab.activeForeground": "#e6e6ee",
+    "tab.inactiveForeground": "#9aa0a6",
+    "tab.activeBorderTop": "#29293a",
+
+    // Lists and panels
+    "sideBarSectionHeader.background": "#141418",
+    "list.hoverBackground": "#15151a",
+    "list.activeSelectionBackground": "#1e1e28",
+    "panel.border": "#1e1e2a",
+
+    // Chat / input and editor widgets — darker box for AI/chat areas
+    "input.background": "#2b2b2f",
+    "input.foreground": "#cfd6dd",
+    "editorWidget.background": "#0c0c0f",
+    "editorWidget.border": "#1a1a20",
+    "panelInput.border": "#141418",
+
+    // Status / badges
+    "statusBar.background": "#0f0f11",
+    "statusBar.noFolderBackground": "#0f0f11",
+    "badge.background": "#2b2b33",
+  },
+
+  // Editor
+  "editor.fontFamily": "FiraCode Nerd Font, Medium",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "workbench.settings.editor": "json",
+
+  // Terminal
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "terminal.integrated.fontLigatures.enabled": true,
+
+  // Python - use Ruff for formatting
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+
+  // Jupyter & Interactive
+  "notebook.lineNumbers": "on",
+  "notebook.output.scrolling": true,
+  "notebook.editorOptionsCustomizations": {
+    "editor.tabSize": 4,
+    "editor.indentSize": 4,
+    "editor.insertSpaces": true
+  },
+  "jupyter.askForKernelRestart": false,
+  "interactiveWindow.executeWithShiftEnter": true,
+
+  // File associations
+  "files.associations": {
+    "*.pyz": "python",
+    "*.wgsl": "wgsl"
+  },
+
+  // Git
+  "git.openRepositoryInParentFolders": "always",
+
+  // Telemetry - disabled
+  "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
+  "terminal.integrated.accessibleViewFocusOnCommandExecution": true
+}

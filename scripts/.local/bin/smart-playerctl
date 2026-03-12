@@ -1,0 +1,67 @@
+#!/bin/bash
+
+COMMAND="$1"
+STATE_FILE="$HOME/.local/state/smart-playerctl-last"
+
+# Ensure state directory exists
+mkdir -p "$(dirname "$STATE_FILE")"
+
+if [ "$COMMAND" = "switch" ]; then
+    # Get list of all players
+    PLAYERS=($(playerctl --list-all 2>/dev/null))
+    COUNT=${#PLAYERS[@]}
+
+    if [ "$COUNT" -eq 0 ]; then
+        notify-send "Player Control" "No players found"
+        exit 0
+    fi
+
+    # Get currently selected player
+    CURRENT=""
+    if [ -f "$STATE_FILE" ]; then
+        CURRENT=$(cat "$STATE_FILE")
+    fi
+
+    # Find index of current player
+    NEXT_INDEX=0
+    for i in "${!PLAYERS[@]}"; do
+        if [ "${PLAYERS[$i]}" = "$CURRENT" ]; then
+            NEXT_INDEX=$(( (i + 1) % COUNT ))
+            break
+        fi
+    done
+
+    # Select next player
+    NEW_PLAYER="${PLAYERS[$NEXT_INDEX]}"
+    echo "$NEW_PLAYER" > "$STATE_FILE"
+    
+    notify-send "Player Switched" "Active: $NEW_PLAYER"
+    exit 0
+fi
+
+# Get a list of players currently playing
+PLAYING_PLAYERS=$(playerctl --list-all 2>/dev/null | xargs -I{} sh -c 'if [ "$(playerctl -p {} status)" = "Playing" ]; then echo {}; fi')
+
+if [ -n "$PLAYING_PLAYERS" ]; then
+    # If one or more players are playing, control the first one
+    TARGET=$(echo "$PLAYING_PLAYERS" | head -n 1)
+    
+    # Remember this player as the last active one
+    echo "$TARGET" > "$STATE_FILE"
+    
+    playerctl --player="$TARGET" "$COMMAND"
+else
+    # If nothing is playing, try to recall the last active player
+    if [ -f "$STATE_FILE" ]; then
+        LAST_PLAYER=$(cat "$STATE_FILE")
+        
+        # Check if the remembered player is still running
+        if playerctl --list-all 2>/dev/null | grep -q "^${LAST_PLAYER}$"; then
+            playerctl --player="$LAST_PLAYER" "$COMMAND"
+            exit 0
+        fi
+    fi
+
+    # Fallback: default to most recent player if no history or player is gone
+    playerctl "$COMMAND"
+fi

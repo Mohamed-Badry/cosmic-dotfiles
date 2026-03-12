@@ -1,0 +1,37 @@
+# Include system-wide defaults
+$include /etc/inputrc
+
+# --- Visual Improvements ---
+# Use colors for completion (match ls colors)
+set colored-stats on
+# Append a character to indicate file type (like 'ls -F', @ for symlinks, / for dirs)
+set visible-stats on
+# Mark directories with a slash appended
+set mark-directories on
+
+# --- Completion Behavior ---
+# Show valid completions immediately (without double-tabbing)
+# but DO NOT cycle. Just list them.
+set show-all-if-ambiguous on
+
+# Ignore case when completing (cd doc -> Documents)
+set completion-ignore-case on
+
+# Treat hyphens and underscores as equivalent
+set completion-map-case on
+
+# Silence the terminal bell completely
+set bell-style none
+
+# --- Navigation & History ---
+# Killer Feature: History Search
+# Type 'gi' and press Up Arrow to find 'git status', 'git commit', etc.
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Ctrl+Left/Right to move by word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# Ctrl+Backspace to delete entire word backwards
+"\C-\b": backward-kill-word

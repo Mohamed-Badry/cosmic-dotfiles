@@ -1,0 +1,70 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 10";
+    show-icons: false;
+    terminal: "wezterm";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-dmenu: " 󱘝 Clipboard ";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #030004f2;
+    fg: #e0e0e0ff;
+    accent: #B12142ff;
+    
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    transparency: "real";
+    width: 600px;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 10px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg;
+    padding: 10px;
+}
+
+prompt {
+    background-color: @accent;
+    padding: 5px 10px;
+    text-color: @bg;
+    border-radius: 5px;
+}
+
+entry {
+    padding: 5px 10px;
+}
+
+listview {
+    lines: 10;
+    padding: 10px;
+}
+
+element {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}

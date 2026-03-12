@@ -1,0 +1,32 @@
+# Inherit from a built-in theme with similar cosmic vibes (blues, purples, reds)
+# inherits = "tokyonight"
+inherits = "horizon-dark"
+# inherits = "monokai_soda"
+
+# --- Overrides ---
+
+# 1. Transparent Background
+"ui.background" = {} 
+"ui.statusline" = { fg = "#e0e0e0", bg = "#1c1c1c" }
+"ui.statusline.inactive" = { fg = "#777777", bg = "#030004" }
+
+# 2. Cosmic Red Cursor
+"ui.cursor" = { fg = "#030004", bg = "#B12142" }
+"ui.cursor.primary" = { fg = "#030004", bg = "#B12142" }
+"ui.cursor.match" = { fg = "#B12142", modifiers = ["bold"] }
+
+# 3. Selection (Muted Slate Blue)
+"ui.selection" = { bg = "#6C7A96" } 
+"ui.selection.primary" = { bg = "#5A667D" } 
+
+# 4. Fix Diagnostics (Underline instead of block background)
+# "diagnostic.error" = { underline = { color = "red", style = "curl" } }
+# "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+# "diagnostic.info" = { underline = { color = "blue", style = "curl" } }
+# "diagnostic.hint" = { underline = { color = "green", style = "curl" } }
+
+# 5. Line numbers
+"ui.linenr.selected" = { fg = "#B12142", modifiers = ["bold"] }
+
+# 6. Inlay Hints (Grayer, semi-transparent look)
+"ui.virtual.inlay-hint" = { fg = "#777777" }

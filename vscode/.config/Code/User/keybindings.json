@@ -1,0 +1,153 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+f10",
+        "command": "editor.action.showContextMenu",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+f10",
+        "command": "-editor.action.showContextMenu",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenView"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
+        "when": "inQuickOpen && inViewsPicker"
+    },
+    {
+        "key": "alt+0",
+        "command": "workbench.action.closeSidebar"
+    },
+    {
+        "key": "ctrl+alt+`",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+r",
+        "command": "python.reloadVSCode"
+    },
+    {
+        "key": "ctrl+oem_8",
+        "command": "terminal.focus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-notebook.centerActiveCell",
+        "when": "notebookEditorFocused"
+    },
+    {
+        "key": "shift+f10",
+        "command": "java.debug.runJavaFile"
+    },
+    {
+        "key": "alt+f",
+        "command": "workbench.explorer.fileView.focus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-workbench.view.extension.phind-webview"
+    },
+    {
+        "key": "alt+e",
+        "command": "pythonEnvironments.focus"
+    },
+    {
+        "key": "alt+i",
+        "command": "workbench.view.extension.phind-webview"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "alt+\\",
+        "command": "python.execInTerminal-icon"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "alt+u",
+        "command": "undo"
+    },
+    {
+        "key": "ctrl+z",
+        "command": "-undo"
+    },
+    {
+        "key": "shift+alt+u",
+        "command": "redo"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "-redo"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "redo"
+    },
+    {
+        "key": "ctrl+z",
+        "command": "undo"
+    }
+]

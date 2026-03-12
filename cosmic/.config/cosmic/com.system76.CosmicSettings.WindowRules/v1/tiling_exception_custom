@@ -1,0 +1,12 @@
+[
+    (
+        appid: "scratchpad",
+        title: ".*",
+        enabled: true,
+    ),
+    (
+        appid: "otter-launcher",
+        title: ".*",
+        enabled: true,
+    ),
+]

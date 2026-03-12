@@ -1,0 +1,142 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "v",
+    ): Spawn("/home/crim/.local/bin/toggle-clipboard.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Up",
+    ): Focus(Up),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Right",
+    ): Focus(Right),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "c",
+    ): Spawn("/home/crim/.local/bin/color-picker.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "z",
+        description: Some("Player Prev"),
+    ): Spawn("smart-playerctl previous"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "j",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "l",
+    ): Focus(Right),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "s",
+    ): SwapWindow,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "grave",
+    ): Spawn("/home/crim/.local/bin/toggle-scratchpad.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "c",
+        description: Some("Player Next"),
+    ): Spawn("smart-playerctl next"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Left",
+    ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): ToggleSticky,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Print",
+        description: Some("OBS Toggle Record"),
+    ): Spawn("/home/crim/.local/bin/obs-toggle-record.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Down",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "k",
+    ): Focus(Up),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "v",
+    ): Spawn("/home/crim/.local/bin/manage-clipboard.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "x",
+    ): Spawn("smart-playerctl play-pause"),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "x",
+        description: Some("Player Switch"),
+    ): Spawn("smart-playerctl switch"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "h",
+    ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+}

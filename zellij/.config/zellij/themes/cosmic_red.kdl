@@ -1,0 +1,17 @@
+themes {
+    cosmic_red {
+        fg "#e0e0e0"
+        bg "#030004"
+        black "#1c1c1c"
+        red "#B12142"
+        // Changing green to a dark blue for "activity" signaling
+        green "#394e6b" 
+        yellow "#D7A55C"
+        blue "#6C7A96"
+        magenta "#957FB8"
+        cyan "#7FA2AC"
+        white "#e0e0e0"
+        // Changing orange to a dark crimson
+        orange "#8a1c34" 
+    }
+}

@@ -1,0 +1,28 @@
+theme = "cosmic_red"
+
+[editor]
+line-number = "relative"
+cursorline = true
+true-color = true
+bufferline = "always"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 20
+wrap-indicator = "↪ "
+wrap-at-text-width = false
+
+[editor.lsp]
+display-inlay-hints = true
+
+# [keys.insert]
+# j = { k = "normal_mode" } # 'jk' to exit insert mode
+
+[keys.normal.space]
+w = ":toggle soft-wrap.enable"
+

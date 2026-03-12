@@ -1,0 +1,22 @@
+# .gitignore for dotfiles
+
+# Ignore history files if they ever accidentally get moved here
+.bash_history
+.zsh_history
+.python_history
+.ipython/
+
+# Ignore sensitive directories just in case
+.ssh/
+.gnupg/
+.aws/
+.kube/
+.netrc
+
+# Ignore cache directories
+.cache/
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,45 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Import data libraries": {
+		"prefix": "dataimport",
+		"body": [
+			"import numpy as np",
+			"import pandas as pd",
+			"import matplotlib.pyplot as plt",
+			"import seaborn as sns\n",
+
+			"sns.set_theme()\n",
+
+			"%matplotlib inline"],
+		"description": "Imports data libraries"
+	},
+	"Set up seaborn PairGrid": {
+		"prefix": "pairgrid",
+		"body": [
+			"g = sns.PairGrid($0)",
+			"g.map_upper(plt.scatter, s=3)",
+			"g.map_diag(plt.hist)",
+			"g.map_lower(sns.kdeplot, cmap=\"Blues_d\")",
+			"g.figure.set_size_inches(12, 12)"],
+		"description": "Sets up seaborn pairgrid"
+	},
+	"Train test split": {
+		"prefix": "traintestsplit",
+		"body": ["X_train, X_test, y_train, y_test = skm.train_test_split(X$0, y, test_size=0.3, random_state=1)"],
+		"description": "Simple Xy train test split"
+	}
+
+
+}

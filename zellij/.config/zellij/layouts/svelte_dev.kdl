@@ -1,0 +1,50 @@
+layout {
+    // 1. Apply your "Compact" style to all tabs
+    // This loads the top bar exactly as your 'default_layout' does.
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar" {
+                tooltip "F2"
+            }
+        }
+    }
+
+    // Tab 1: Main
+    // Your "home base" for git, file ops, etc.
+    tab name="Main" focus=true {
+        pane split_direction="horizontal" {
+            pane name="Main" size="50%"
+
+            pane name="Other" size="50%"
+        }
+    }
+
+    // Tab 2: Editor (Svelte + Bun)
+    tab name="Editor" {
+        pane split_direction="vertical" {
+            // Left: Helix
+            // Opens strictly in the current directory
+            pane name="Helix" edit="." size="70%"
+
+            // Right: The Bun Stack
+            pane split_direction="horizontal" {
+                // Top Right: The Dev Server
+                // We name it "Server" so you can spot it easily in the UI
+                pane command="bun" name="Server" {
+                    args "run" "dev" "--" "--open"
+                }
+                
+                // Bottom Right: Quick Terminal
+                // Useful for adding packages (bun add x) without leaving the editor view
+                pane name="Shell"
+            }
+        }
+    }
+
+    // Tab 3: Gemini
+    tab name="Gemini" {
+        // Replace 'gemini' with the exact command you use (e.g., 'tgpt', 'mods', etc.)
+        pane command="gemini" name="AI Assistant"
+    }
+}

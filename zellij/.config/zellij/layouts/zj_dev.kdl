@@ -1,0 +1,34 @@
+layout {
+    // Apply "Compact" style to all tabs
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar" {
+                tooltip "F2"
+            }
+        }
+    }
+
+    // Tab 1: Main
+    tab name="Main" focus=true {
+        pane split_direction="horizontal" {
+            pane name="Main"
+            pane name="Other" size="50%"
+        }
+    }
+
+    // Tab 2: Gemini
+    tab name="Gemini" {
+        pane name="Gemini"
+    }
+
+    // Tab 3: Editor
+    tab name="Editor" {
+        pane split_direction="horizontal" {
+            pane command="hx" name="Helix" {
+                args "."
+            }
+            pane command="yazi" name="File Manager" size="50%"
+        }
+    }
+}
