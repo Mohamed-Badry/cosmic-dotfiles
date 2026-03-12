@@ -2,19 +2,21 @@
 
 ## 1. Context & Status
 - **Goal:** Manage and backup dotfiles to a GitHub repository using a "set and forget" approach.
-- **Current Task:** Initial setup and migration of existing configuration files into a Git repository.
-- **Next Steps:** Migrate files to the `~/dotfiles` repository, setup GNU Stow, create an installation script, and push to GitHub.
+- **Current Task:** Maintenance, expanding stowed packages, and documenting the workflow for future additions.
+- **Status:** Initial migration is complete. GNU Stow is set up to manage packages. An `install.sh` script is functional and includes dynamic path resolution for hardcoded Cosmic configurations.
 
 ## 2. Technical Decisions (ADRs)
 - **Method:** **GNU Stow**
 - **Why GNU Stow?**
-  - **Set and Forget:** Once a configuration is "stowed" (symlinked), you edit your config files in `~/.config/` exactly as you always have. The changes automatically reflect in the `~/dotfiles` repository because they are symlinks. No need to remember special commands like `chezmoi edit`.
-  - **Modular:** Looking at your `~/.config` folder, you have many distinct applications (`wezterm`, `zellij`, `helix`, `btop`, `starship`). Stow allows us to group these into "packages" (e.g., a `wezterm` folder, a `zellij` folder). This means on a server, you could just stow `bash` and `helix`, but on your desktop, you stow everything.
-  - **Scriptable Setup:** We can easily write a simple `install.sh` script that automatically runs `stow` for all packages on a new machine.
+  - **Set and Forget:** Once a configuration is "stowed" (symlinked), editing config files in `~/.config/` directly updates the repository.
+  - **Modular:** Configurations are grouped into "packages" (e.g., `wezterm`, `zellij`, `fastfetch`), allowing selective installation on different machines.
+- **Handling Absolute Paths:**
+  - Some applications (like Cosmic Epoch desktop components) do not support `~` expansion for paths (e.g., wallpapers, favorites) and require absolute paths like `/home/crim/...`.
+  - **Solution:** We store the absolute paths pointing to `/home/crim` in the repo, but the `install.sh` script automatically uses `sed` to replace `/home/crim` with the current user's `$HOME` variable when setting up a new machine.
 
 ## 3. Development Commands
-- **Stow a package:** `stow <package_name>` (e.g., `stow wezterm`)
-- **Unstow a package:** `stow -D <package_name>`
+- **Stow a package:** `cd ~/dotfiles && stow <package_name>`
+- **Unstow a package:** `cd ~/dotfiles && stow -D <package_name>`
 - **Backup to GitHub:**
   ```bash
   cd ~/dotfiles
@@ -24,45 +26,40 @@
   ```
 
 ## 4. Architecture Overview (Stow Structure)
-The repository `~/dotfiles` will be structured where each top-level directory is a "package" that mimics the home directory structure inside it.
+The repository `~/dotfiles` is structured where each top-level directory is a "package" that mimics the home directory structure inside it.
 
 ```text
 ~/dotfiles/
-├── bash/
-│   ├── .bashrc
-│   ├── .bash_logout
-│   └── .profile
-├── git/
-│   └── .gitconfig
-├── wezterm/
-│   └── .config/
-│       └── wezterm/
-│           └── wezterm.lua
-├── zellij/
-│   └── .config/
-│       └── zellij/
-├── helix/
-│   └── .config/
-│       └── helix/
-├── starship/
-│   └── .config/
-│       ├── starship.toml
-│       └── starship-vscode.toml
-└── install.sh (Automates the stow process for new machines)
+├── bash/             # bash configurations
+├── btop/             # btop configuration
+├── cosmic/           # Cosmic Epoch desktop config
+├── fastfetch/        # fastfetch configuration
+├── fuzzel/           # fuzzel application launcher config
+├── helix/            # helix text editor config
+├── rofi/             # rofi launcher config
+├── scripts/          # custom user scripts (.local/bin)
+├── starship/         # starship prompt config
+├── vscode/           # VSCode user settings
+├── wallpapers/       # desktop wallpapers (.local/share/backgrounds)
+├── wezterm/          # wezterm terminal config
+├── zellij/           # zellij multiplexer config
+├── install.sh        # Automates the stow process and path translation
+└── README.md
 ```
 
-## 5. Execution Steps
+## 5. Standard Operating Procedure (SOP) for Adding a New Package
+**Attention Gemini:** When the user requests to back up a new tool or configuration, STRICTLY follow these steps:
 
-### Phase 1: Preparation
-1. Install GNU Stow (`sudo apt install stow` or equivalent).
-2. Initialize `~/dotfiles` as a Git repository.
-
-### Phase 2: Migration (The core task)
-1. Create package directories in `~/dotfiles` (e.g., `bash`, `wezterm`, `zellij`, `helix`, `starship`, `git`).
-2. Move the actual config files from `~` and `~/.config` into their respective package directories in `~/dotfiles`, maintaining the directory structure (e.g., move `~/.config/wezterm` to `~/dotfiles/wezterm/.config/wezterm`).
-3. Use Stow to create symlinks back to the original locations (`cd ~/dotfiles && stow wezterm`).
-
-### Phase 3: Automation & Backup
-1. Write an `install.sh` script in `~/dotfiles` that iterates through the directories and runs `stow` on them.
-2. Commit all changes to Git.
-3. (User Action) Create a GitHub repository and push the local `~/dotfiles` repository to it.
+1. **Verify Existence:** Check if the configuration directory/file exists in the user's home directory.
+2. **Audit for Secrets & Paths:** 
+   - Inspect the configuration files.
+   - **CRITICAL:** Ensure NO API keys, passwords, or sensitive tokens are included.
+   - Identify if there are any hardcoded absolute paths (like `/home/crim/...`). If so, determine if the tool supports `~` or `$HOME` expansion and update it. If it strictly requires absolute paths (like Cosmic), ensure `install.sh` is capable of translating it during setup.
+3. **Create Package Structure:** Create the corresponding Stow package directory structure in `~/dotfiles`.
+   - *Example:* For `~/.config/nvim`, create `~/dotfiles/nvim/.config/`.
+4. **Copy Configurations:** Copy the configurations from the home directory to the new package directory.
+5. **Remove Original & Stow:**
+   - **CRITICAL:** You must delete the original configuration directory from `~/.config/` (or `~`) before running `stow`. Stow will fail if a real directory or file already exists at the target symlink location.
+   - Run `stow <package_name>` from the `~/dotfiles` directory.
+6. **Update Installer:** Add the new package name to the `PACKAGES` array in `~/dotfiles/install.sh`.
+7. **Update Documentation:** Update the directory tree in `~/dotfiles/README.md` to reflect the newly managed package.

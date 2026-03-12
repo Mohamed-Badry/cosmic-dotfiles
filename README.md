@@ -20,8 +20,8 @@ Requires `git` and `stow` (`sudo apt install stow`).
 The install script will automatically replace hardcoded paths to `/home/crim` in the Cosmic configurations with your local `$HOME` path. Wallpapers are included in the repository and will be automatically stowed to `~/.local/share/backgrounds/`. If they do not appear immediately, you may need to re-select them in your Cosmic Appearance settings or log out and back in to refresh the desktop session.
 
 ```bash
-git clone https://github.com/Mohamed-Badry/cosmic-dotfiles.git ~/cosmic-dotfiles
-cd ~/cosmic-dotfiles
+git clone https://github.com/Mohamed-Badry/cosmic-dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./install.sh
 ```
 
@@ -30,7 +30,7 @@ cd ~/cosmic-dotfiles
 Packages are structured to mirror the home directory. Stow creates symlinks from these directories into `~`.
 
 ```text
-~/cosmic-dotfiles/
+~/dotfiles/
 ├── bash/             # .bashrc, .profile, etc.
 ├── cosmic/           # .config/cosmic/...
 ├── fastfetch/        # .config/fastfetch/...
@@ -44,7 +44,7 @@ Packages are structured to mirror the home directory. Stow creates symlinks from
 
 To add a new tool (e.g., `nvim`) to the stow setup:
 
-1. Create package structure: `mkdir -p ~/cosmic-dotfiles/nvim/.config`
-2. Move existing config: `mv ~/.config/nvim ~/cosmic-dotfiles/nvim/.config/`
-3. Symlink it: `cd ~/cosmic-dotfiles && stow nvim`
+1. Create package structure: `mkdir -p ~/dotfiles/nvim/.config`
+2. Move existing config: `mv ~/.config/nvim ~/dotfiles/nvim/.config/`
+3. Symlink it: `cd ~/dotfiles && stow nvim`
 4. Update script: Add `"nvim"` to the `PACKAGES` array in `install.sh`.
