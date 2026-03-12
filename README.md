@@ -10,6 +10,10 @@ See [DETAILS.md](DETAILS.md) for a complete list of tools, utilities, scripts, a
 
 Requires `git` and `stow` (`sudo apt install stow`).
 
+**Fonts Required:**
+*   [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)
+*   [FiraCode Nerd Font](https://www.nerdfonts.com/)
+
 ```bash
 git clone https://github.com/your-username/dotfiles.git ~/dotfiles
 cd ~/dotfiles

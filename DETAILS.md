@@ -31,6 +31,10 @@ A reference list of installed tools, CLI utilities, and custom scripts/keybindin
 *   **Browser:** [Zen Browser](https://zen-browser.app/)
 *   **Flatpaks:** Chromium, Heroic Games Launcher, Camera
 
+## Implicit Dependencies & Theming
+*   **Fonts:** `JetBrainsMono Nerd Font` (WezTerm, Rofi) and `FiraCode Nerd Font` (Cosmic Monospace, VSCode).
+*   **VSCode Extensions:** `material-icon-theme`, `Horizon Italic` (Theme).
+
 ---
 
 ## Custom Keybindings
