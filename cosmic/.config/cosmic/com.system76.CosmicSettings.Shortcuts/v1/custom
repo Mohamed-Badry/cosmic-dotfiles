@@ -2,60 +2,11 @@
     (
         modifiers: [
             Super,
-        ],
-        key: "v",
-    ): Spawn("toggle-clipboard.sh"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Up",
-    ): Focus(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Right",
-    ): Focus(Right),
-    (
-        modifiers: [
-            Super,
             Shift,
         ],
-        key: "c",
-    ): Spawn("color-picker.sh"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "z",
-        description: Some("Player Prev"),
-    ): Spawn("smart-playerctl previous"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "j",
-    ): Focus(Down),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "l",
-    ): Focus(Right),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "s",
-    ): SwapWindow,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "grave",
-    ): Spawn("toggle-scratchpad.sh"),
+        key: "Print",
+        description: Some("OBS Toggle Record"),
+    ): Spawn("obs-toggle-record.sh"),
     (
         modifiers: [
             Super,
@@ -67,40 +18,26 @@
         modifiers: [
             Super,
         ],
-        key: "f",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Left",
-    ): Focus(Left),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "p",
-    ): ToggleSticky,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Print",
-        description: Some("OBS Toggle Record"),
-    ): Spawn("obs-toggle-record.sh"),
-    (
-        modifiers: [
-            Super,
-        ],
         key: "Down",
     ): Focus(Down),
     (
         modifiers: [
             Super,
         ],
+        key: "grave",
+    ): Spawn("toggle-scratchpad.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
         key: "k",
     ): Focus(Up),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "e",
+    ): System(HomeFolder),
     (
         modifiers: [
             Super,
@@ -112,8 +49,53 @@
         modifiers: [
             Super,
         ],
+        key: "v",
+        description: Some("cliphist-cosmic"),
+    ): Spawn("cliphist-cosmic --vim"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "z",
+        description: Some("Player Prev"),
+    ): Spawn("smart-playerctl previous"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Right",
+    ): Focus(Right),
+    (
+        modifiers: [
+            Super,
+        ],
         key: "x",
     ): Spawn("smart-playerctl play-pause"),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "s",
+    ): SwapWindow,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "h",
+    ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "j",
+    ): Focus(Down),
     (
         modifiers: [
             Super,
@@ -125,18 +107,37 @@
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "e",
-    ): System(HomeFolder),
+        key: "c",
+    ): Spawn("color-picker.sh"),
     (
         modifiers: [
             Super,
         ],
-        key: "h",
+        key: "Left",
     ): Focus(Left),
     (
         modifiers: [
             Super,
         ],
     ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "l",
+    ): Focus(Right),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): ToggleSticky,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Up",
+    ): Focus(Up),
 }

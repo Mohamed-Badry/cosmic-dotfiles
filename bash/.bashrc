@@ -235,6 +235,11 @@ alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
+# Convert mkv to mp4
+convert-mkv() {
+    ffmpeg -i "$1" -c:v libx264 -crf 23 -preset fast -c:a aac -b:a 192k "${1%.mkv}.mp4"
+}
+
 # Extract function
 extract () {
 	for archive in $*
@@ -365,3 +370,5 @@ alias yt-hist="ytfzf -t -c H"
 
 export PATH="$HOME/.pixi/bin:$PATH"
 eval "$(pixi completion --shell bash)"
+
+source <(COMPLETE=bash jj)

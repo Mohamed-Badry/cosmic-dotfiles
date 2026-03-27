@@ -6,7 +6,7 @@ config.bidi_enabled = true
 config.bidi_direction = 'AutoLeftToRight'
 config.font = wezterm.font_with_fallback {
   'JetBrainsMono Nerd Font',
-  'Thabit',
+  'Kawkab Mono',
 }
 config.font_size = 12.0
 

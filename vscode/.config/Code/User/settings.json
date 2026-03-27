@@ -88,5 +88,18 @@
   // Telemetry - disabled
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
-  "accessibility.verbosity.terminal": false
+"accessibility.verbosity.terminal": false,
+"svelte.enable-ts-plugin": true,
+"[wgsl]": {
+  "editor.defaultFormatter": "wgsl-analyzer.wgsl-analyzer"
+},
+"[rust]": {
+  "editor.defaultFormatter": "rust-lang.rust-analyzer"
+},
+"github.copilot.enable": {
+  "*": false,
+  "plaintext": false,
+  "markdown": false,
+  "scminput": false
+}
 }
