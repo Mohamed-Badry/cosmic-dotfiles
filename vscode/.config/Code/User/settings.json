@@ -4,48 +4,51 @@
   "workbench.iconTheme": "material-icon-theme",
   "window.menuBarVisibility": "toggle",
   "workbench.colorCustomizations": {
-    // Base background 
-    "editor.background": "#121216",
-    "sideBar.background": "#121216",
-    "activityBar.background": "#121216",
-    "panel.background": "#121216",
-    "titleBar.activeBackground": "#121216",
-    "titleBar.inactiveBackground": "#0f0f11",
-    "editorLineNumber.foreground": "#9aa0a6",
-    "editorLineNumber.activeForeground": "#E95678",
+    "[Horizon Italic]": {
+      // Base background
+      "editor.background": "#121216",
+      "sideBar.background": "#121216",
+      "activityBar.background": "#121216",
+      "panel.background": "#121216",
+      "titleBar.activeBackground": "#121216",
+      "titleBar.inactiveBackground": "#0f0f11",
+      "editorLineNumber.foreground": "#9aa0a6",
+      "editorLineNumber.activeForeground": "#E95678",
+  
+      // Subtle highlights / accents in same family to preserve contrast
+      "editor.lineHighlightBackground": "#1b1b21",
+      "editor.lineHighlightBorder": "#22222a",
+      "editor.selectionBackground": "#2a2a3a",
+      "editor.selectionHighlightBackground": "#6f4268",
+  
+      // Tabs, group headers - darker to separate from editor
+      "editorGroupHeader.tabsBackground": "#121216",
+      "tab.activeBackground": "#0a0a0c",
+      "tab.inactiveBackground": "#121216",
+      "tab.activeForeground": "#e6e6ee",
+      "tab.inactiveForeground": "#9aa0a6",
+      "tab.activeBorderTop": "#29293a",
+  
+      // Lists and panels
+      "sideBarSectionHeader.background": "#141418",
+      "list.hoverBackground": "#15151a",
+      "list.activeSelectionBackground": "#1e1e28",
+      "panel.border": "#1e1e2a",
+  
+      // Chat / input and editor widgets — darker box for AI/chat areas
+      "input.background": "#2b2b2f",
+      "input.foreground": "#cfd6dd",
+      "editorWidget.background": "#0c0c0f",
+      "editorWidget.border": "#1a1a20",
+      "panelInput.border": "#141418",
+  
+      // Status / badges
+      "statusBar.background": "#0f0f11",
+      "statusBar.noFolderBackground": "#0f0f11",
+      "badge.background": "#2b2b33",
 
-    // Subtle highlights / accents in same family to preserve contrast
-    "editor.lineHighlightBackground": "#1b1b21",
-    "editor.lineHighlightBorder": "#22222a",
-    "editor.selectionBackground": "#2a2a3a",
-    "editor.selectionHighlightBackground": "#6f4268",
-
-    // Tabs, group headers - darker to separate from editor
-    "editorGroupHeader.tabsBackground": "#121216",
-    "tab.activeBackground": "#0a0a0c",
-    "tab.inactiveBackground": "#121216",
-    "tab.activeForeground": "#e6e6ee",
-    "tab.inactiveForeground": "#9aa0a6",
-    "tab.activeBorderTop": "#29293a",
-
-    // Lists and panels
-    "sideBarSectionHeader.background": "#141418",
-    "list.hoverBackground": "#15151a",
-    "list.activeSelectionBackground": "#1e1e28",
-    "panel.border": "#1e1e2a",
-
-    // Chat / input and editor widgets — darker box for AI/chat areas
-    "input.background": "#2b2b2f",
-    "input.foreground": "#cfd6dd",
-    "editorWidget.background": "#0c0c0f",
-    "editorWidget.border": "#1a1a20",
-    "panelInput.border": "#141418",
-
-    // Status / badges
-    "statusBar.background": "#0f0f11",
-    "statusBar.noFolderBackground": "#0f0f11",
-    "badge.background": "#2b2b33",
-  },
+    },
+  },  
 
   // Editor
   "editor.fontFamily": "FiraCode Nerd Font, Medium",
@@ -62,7 +65,7 @@
   // Python - use Ruff for formatting
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
 
   // Jupyter & Interactive
@@ -71,7 +74,7 @@
   "notebook.editorOptionsCustomizations": {
     "editor.tabSize": 4,
     "editor.indentSize": 4,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "jupyter.askForKernelRestart": false,
   "interactiveWindow.executeWithShiftEnter": true,
@@ -79,7 +82,7 @@
   // File associations
   "files.associations": {
     "*.pyz": "python",
-    "*.wgsl": "wgsl"
+    "*.wgsl": "wgsl",
   },
 
   // Git
@@ -88,18 +91,36 @@
   // Telemetry - disabled
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
-"accessibility.verbosity.terminal": false,
-"svelte.enable-ts-plugin": true,
-"[wgsl]": {
-  "editor.defaultFormatter": "wgsl-analyzer.wgsl-analyzer"
-},
-"[rust]": {
-  "editor.defaultFormatter": "rust-lang.rust-analyzer"
-},
-"github.copilot.enable": {
-  "*": false,
-  "plaintext": false,
-  "markdown": false,
-  "scminput": false
-}
+  "accessibility.verbosity.terminal": false,
+  "svelte.enable-ts-plugin": true,
+  "[wgsl]": {
+    "editor.defaultFormatter": "wgsl-analyzer.wgsl-analyzer",
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  // Sorts the dropdown by what you recently used, mimicking IntelliCode's contextual ranking
+  "editor.suggestSelection": "recentlyUsed",
+
+  // Forces Pylance to pre-select the exact match if you type a few letters
+  "editor.suggest.matchOnWordStartOnly": false,
+
+  // Kills generative ghost text entirely so it never blocks your dropdown
+  "editor.suggest.preview": false,
+
+  // Pushes snippets (like 'for loop' templates) to the bottom so actual Python methods stay at the top
+  "editor.snippetSuggestions": "bottom",
+
+  // Ensures Pylance indexes your uv environment correctly to find all the minitorch modules
+  "python.analysis.indexing": true,
+  "extensions.autoUpdate": false,
 }

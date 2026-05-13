@@ -6,9 +6,9 @@
         alpha: 1.0,
     ),
     hover: (
-        red: 0.15300868,
+        red: 0.1530087,
         green: 0.34438127,
-        blue: 0.20634198,
+        blue: 0.20634201,
         alpha: 1.0,
     ),
     pressed: (
@@ -18,9 +18,9 @@
         alpha: 1.0,
     ),
     selected: (
-        red: 0.15300868,
+        red: 0.1530087,
         green: 0.34438127,
-        blue: 0.20634198,
+        blue: 0.20634201,
         alpha: 1.0,
     ),
     selected_text: (

@@ -1,5 +1,17 @@
 {
     (
+        modifiers: [],
+        key: "Print",
+        description: Some("Screenshot Full to Screenshots"),
+    ): Spawn("cosmic-screenshot --interactive=false --save-dir /home/crim/Pictures/Screenshots"),
+    (
+        modifiers: [
+            Ctrl,
+        ],
+        key: "Print",
+        description: Some("Screenshot Interactive"),
+    ): Spawn("cosmic-screenshot --interactive=true --save-dir /home/crim/Pictures/Screenshots"),
+    (
         modifiers: [
             Super,
             Shift,

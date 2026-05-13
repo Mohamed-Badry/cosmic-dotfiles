@@ -150,14 +150,14 @@
         "key": "ctrl+z",
         "command": "undo"
     },
-    {
-        "key": "escape",
-        "command": "extension.helixKeymap.escapeKey",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "escape",
-        "command": "-extension.helixKeymap.escapeKey",
-        "when": "editorTextFocus"
-    }
+    // {
+    //     "key": "escape",
+    //     "command": "extension.helixKeymap.escapeKey",
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "escape",
+    //     "command": "-extension.helixKeymap.escapeKey",
+    //     "when": "editorTextFocus"
+    // }
 ]
