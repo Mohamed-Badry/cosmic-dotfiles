@@ -9,7 +9,7 @@
     wrap_navigation: true,
     theme: "mei",
     cache_dir: Some("/tmp/rmpc/cache"),
-    lyrics_dir: "~/Music",
+    lyrics_dir: "~/Music/lyrics",
     on_song_change: None,
     status_update_interval_ms: 1000,
     enable_mouse: true,
@@ -56,13 +56,11 @@
             "<Left>":  PreviousTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "!":       SwitchToTab("Queue (Mini)"),
-            "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "2":       SwitchToTab("Queue (Mini)"),
+            "3":       SwitchToTab("Queue (Lyrics)"),
+            "4":       SwitchToTab("Directories"),
+            "5":       SwitchToTab("Playlists"),
+            "6":       SwitchToTab("Search"),
             "z":       ToggleRepeat,
             "x":       ToggleRandom,
             "c":       ToggleSingle,
@@ -128,19 +126,7 @@
                     (
                         size: "30%",
                         borders: "RIGHT",
-                        pane: Split(
-                            direction: Vertical,
-                            panes: [
-                                (
-                                    size: "100%",
-                                    pane: Pane(Lyrics)
-                                ),
-                                (
-                                    size: "0.409090909r",
-                                    pane: Pane(AlbumArt),
-                                ),
-                            ],
-                        ),
+                        pane: Pane(AlbumArt),
                     ),
                     (
                         size: "100%",
@@ -181,24 +167,53 @@
             ),
         ),
         (
+            name: "Queue (Lyrics)",
+            border_type: None,
+            pane: Split(
+                direction: Horizontal,
+                panes: [
+                    (
+                        size: "30%",
+                        borders: "RIGHT",
+                        pane: Split(
+                            direction: Vertical,
+                            panes: [
+                                (
+                                    size: "40%",
+                                    pane: Pane(AlbumArt),
+                                ),
+                                (
+                                    borders: "TOP",
+                                    size: "60%",
+                                    pane: Pane(Lyrics)
+                                ),
+                            ],
+                        ),
+                    ),
+                    (
+                        size: "100%",
+                        pane: Split(
+                            direction: Vertical,
+                            panes: [
+                                (
+                                    size: "60%",
+                                    pane: Pane(Queue),
+                                ),
+                                (
+                                    borders: "TOP",
+                                    size: "40%",
+                                    pane: Pane(Cava)
+                                ),
+                            ],
+                        ),
+                    )
+                ],
+            ),
+        ),
+        (
             name: "Directories",
             border_type: None,
             pane: Pane(Directories),
-        ),
-        (
-            name: "Artists",
-            border_type: None,
-            pane: Pane(Artists),
-        ),
-        (
-            name: "Album Artists",
-            border_type: None,
-            pane: Pane(AlbumArtists),
-        ),
-        (
-            name: "Albums",
-            border_type: None,
-            pane: Pane(Albums),
         ),
         (
             name: "Playlists",

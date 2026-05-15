@@ -56,9 +56,27 @@
         "volume": Split(
             direction: Horizontal,
             panes: [
-                (size: "100%", pane: Pane(Property(content: [(kind: Property(Widget(Volume)), style: (fg: "blue"))], align: Right))),
-                (size: "3", pane: Pane(Property(content: [(kind: Property(Status(Volume)), style: (fg: "blue"))], align: Right))),
-                (size: "1", pane: Pane(Property(content: [(kind: Text("%"), style: (fg: "blue"))]))),
+                (size: "8", pane: Pane(Property(content: [(kind: Text("Volume: "), style: (fg: "blue"))], align: Left))),
+                
+                (size: "100%", pane: Pane(Volume(
+                    kind: Slider(
+                        symbols: (
+                            start: "♪",
+                            filled: "─",
+                            thumb: "●",
+                            track: "─",
+                            end: "♫",
+                        ),
+                        track_style: (fg: "gray"),
+                        filled_style: (fg: "blue"),
+                        thumb_style: (fg: "white"),
+                    )
+                ))),
+                
+                (size: "4", pane: Pane(Property(content: [
+                    (kind: Property(Status(Volume)), style: (fg: "blue")),
+                    (kind: Text("%"), style: (fg: "blue"))
+                ], align: Center))),
             ]
         ),
         "elapsed_and_bitrate": Pane(Property(

@@ -375,3 +375,10 @@ export PATH="$HOME/.pixi/bin:$PATH"
 eval "$(pixi completion --shell bash)"
 
 source <(COMPLETE=bash jj)
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/crim/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/crim/.opencode/bin:$PATH
