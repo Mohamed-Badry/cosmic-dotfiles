@@ -1,0 +1,134 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+
+(
+    // Base Colors
+    default_format: (
+        text_color: "#E2E2E2",
+        background_color: "Reset",
+    ),
+
+    // Borders
+    window_border_color: "#3F3F3F",
+    active_window_border_color: "#48B9C7",
+    
+    // UI Elements
+    highlighted_item_style: (
+        text_color: "#1E1E1E",
+        background_color: "#48B9C7",
+        modifiers: "Bold",
+    ),
+    current_item_style: (
+        text_color: "#F18E33",
+        modifiers: "Bold",
+    ),
+    borders: ["ALL"],
+
+    // Top Header Definition
+    header: (
+        rows: [
+            (
+                left: [
+                    (kind: Text(value: " 󰎆 ")),
+                    (kind: Property(kind: Title, default: "No Track Playing"), style: (text_color: "#48B9C7", modifiers: ["Bold"])),
+                    (kind: Text(value: " 󰧚 ")),
+                    (kind: Property(kind: Artist, default: "Unknown Artist"), style: (text_color: "#E2E2E2")),
+                    (kind: Text(value: "   ")),
+                    (kind: Property(kind: Album, default: "Unknown Album"), style: (text_color: "#9E9E9E")),
+                ],
+                right: [
+                    (kind: Property(kind: State(playing: "▶", paused: "󰏤", stopped: "■")), style: (text_color: "#F18E33")),
+                    (kind: Text(value: "   ")),
+                    (kind: Property(kind: Volume, default: "100%")),
+                ]
+            ),
+        ],
+    ),
+
+    // Progress Bar Definition
+    progress_bar: (
+        symbols: ["─", "●", "─"],
+        track_style: (text_color: "#3F3F3F"),
+        elapsed_style: (text_color: "#48B9C7"),
+        thumb_style: (text_color: "#F18E33"),
+    ),
+
+    // Layout Engine
+    layout: (
+        tabs: [
+            (
+                name: "Queue",
+                panes: [
+                    (
+                        type: Pane(Queue),
+                        size: "70%",
+                    ),
+                    (
+                        type: Pane(AlbumArt),
+                        size: "30%",
+                    )
+                ],
+            ),
+            (
+                name: "Directories",
+                panes: [
+                    (
+                        type: Pane(Directories),
+                        size: "100%",
+                    )
+                ],
+            ),
+            (
+                name: "Artists",
+                panes: [
+                    (
+                        type: Pane(Artists),
+                        size: "40%",
+                    ),
+                    (
+                        type: Pane(Albums),
+                        size: "60%",
+                    )
+                ],
+            ),
+            (
+                name: "Playlists",
+                panes: [
+                    (
+                        type: Pane(Playlists),
+                        size: "100%",
+                    )
+                ],
+            )
+        ],
+    ),
+
+    // Column Definitions for the Queue
+    queue: (
+        columns: [
+            (
+                kind: Property(kind: Status(playing: "▶ ", paused: "󰏤 ", stopped: "")),
+                width: 3,
+            ),
+            (
+                kind: Property(kind: Track),
+                width: 4,
+                style: (text_color: "#9E9E9E"),
+            ),
+            (
+                kind: Property(kind: Title),
+                width: 45,
+            ),
+            (
+                kind: Property(kind: Artist),
+                width: 30,
+            ),
+            (
+                kind: Property(kind: Duration),
+                width: 6,
+                style: (text_color: "#9E9E9E"),
+            ),
+        ],
+    ),
+)

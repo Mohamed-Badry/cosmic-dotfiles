@@ -1,9 +1,38 @@
 {
     (
-        modifiers: [],
-        key: "Print",
-        description: Some("Screenshot Full to Screenshots"),
-    ): Spawn("cosmic-screenshot --interactive=false --save-dir /home/crim/Pictures/Screenshots"),
+        modifiers: [
+            Super,
+        ],
+        key: "c",
+        description: Some("Player Next"),
+    ): Spawn("smart-playerctl next"),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "x",
+        description: Some("Player Switch"),
+    ): Spawn("smart-playerctl switch"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "h",
+    ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "v",
+    ): Spawn("manage-clipboard.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "l",
+    ): Focus(Right),
     (
         modifiers: [
             Ctrl,
@@ -16,28 +45,14 @@
             Super,
             Shift,
         ],
-        key: "Print",
-        description: Some("OBS Toggle Record"),
-    ): Spawn("obs-toggle-record.sh"),
+        key: "s",
+    ): SwapWindow,
     (
         modifiers: [
             Super,
         ],
-        key: "c",
-        description: Some("Player Next"),
-    ): Spawn("smart-playerctl next"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Down",
-    ): Focus(Down),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "grave",
-    ): Spawn("toggle-scratchpad.sh"),
+        key: "e",
+    ): System(HomeFolder),
     (
         modifiers: [
             Super,
@@ -48,15 +63,8 @@
         modifiers: [
             Super,
         ],
-        key: "e",
-    ): System(HomeFolder),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "v",
-    ): Spawn("manage-clipboard.sh"),
+        key: "Right",
+    ): Focus(Right),
     (
         modifiers: [
             Super,
@@ -64,58 +72,6 @@
         key: "v",
         description: Some("cliphist-cosmic"),
     ): Spawn("cliphist-cosmic --vim"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "f",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "z",
-        description: Some("Player Prev"),
-    ): Spawn("smart-playerctl previous"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Right",
-    ): Focus(Right),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "x",
-    ): Spawn("smart-playerctl play-pause"),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "s",
-    ): SwapWindow,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "h",
-    ): Focus(Left),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "j",
-    ): Focus(Down),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "x",
-        description: Some("Player Switch"),
-    ): Spawn("smart-playerctl switch"),
     (
         modifiers: [
             Super,
@@ -127,19 +83,21 @@
         modifiers: [
             Super,
         ],
-        key: "Left",
-    ): Focus(Left),
+        key: "z",
+        description: Some("Player Prev"),
+    ): Spawn("smart-playerctl previous"),
     (
         modifiers: [
             Super,
         ],
-    ): System(Launcher),
+        key: "Up",
+    ): Focus(Up),
     (
         modifiers: [
             Super,
         ],
-        key: "l",
-    ): Focus(Right),
+        key: "grave",
+    ): Spawn("toggle-scratchpad.sh"),
     (
         modifiers: [
             Super,
@@ -149,7 +107,50 @@
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "Up",
-    ): Focus(Up),
+        key: "Print",
+        description: Some("OBS Toggle Record"),
+    ): Spawn("obs-toggle-record.sh"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Down",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Left",
+    ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Print",
+    ): Spawn("cosmic-screenshot --interactive=false --save-dir /home/crim/Pictures/Screenshots"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "j",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "x",
+    ): Spawn("smart-playerctl play-pause"),
 }

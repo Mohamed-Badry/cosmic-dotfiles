@@ -235,6 +235,9 @@ alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
+# Misc
+alias shuffle-playlist='detach mpv --loop-playlist=inf --shuffle=yes'
+
 # Convert mkv to mp4
 convert-mkv() {
     ffmpeg -i "$1" -c:v libx264 -crf 23 -preset fast -c:a aac -b:a 192k "${1%.mkv}.mp4"
