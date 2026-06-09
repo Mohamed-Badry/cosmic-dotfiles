@@ -20,7 +20,7 @@ A reference list of installed tools, CLI utilities, and custom scripts/keybindin
 ### Rust Ecosystem (`cargo binstall`)
 *   **Core Utils:** `bat` (cat), `eza` (ls), `zoxide` (cd), `dua` (disk usage), `sk` (fuzzy finder)
 *   **Dev:** `just`, `taplo`, `typst`, `tinymist`
-*   **System/Media:** `yazi`, `termusic`, `termusic-server`, `statui`, `weathr`, `netwatch`, `oxipng`
+*   **System/Media:** `yazi`, `rmpc` (mpd client), `statui`, `weathr`, `netwatch`, `oxipng`
 *   **AI:** `gemini-watermark`, `llmfit`
 *   **Cargo:** `cargo-binstall`, `cargo-install-update`
 
@@ -41,9 +41,8 @@ A reference list of installed tools, CLI utilities, and custom scripts/keybindin
 
 The following shortcuts are custom additions implemented on top of the default Cosmic Epoch keybindings. They rely on the shell scripts backed up in `scripts/.local/bin/`.
 
-### Clipboard (Fuzzel + Cliphist)
-*   **`Super + V` (Toggle):** Kills Fuzzel if open; otherwise pipes `cliphist list` to `fuzzel --dmenu` and copies selection via `wl-copy`.
-*   **`Super + Shift + V` (Manage):** Opens a dedicated menu to delete specific cliphist entries or wipe history entirely.
+### Clipboard (`cliphist-cosmic`)
+*   **`Super + V` (Toggle):** clipboard picker built with cosmic for cliphist (cliphist-cosmic)[https://github.com/Mohamed-Badry/cliphist-cosmic].
 
 ### Media (`smart-playerctl`)
 Controls target the *active* or *most recent* media player rather than sending commands to all open players simultaneously.

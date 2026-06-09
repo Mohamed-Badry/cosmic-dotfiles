@@ -57,10 +57,9 @@
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
             "2":       SwitchToTab("Queue (Mini)"),
-            "3":       SwitchToTab("Queue (Lyrics)"),
-            "4":       SwitchToTab("Directories"),
-            "5":       SwitchToTab("Playlists"),
-            "6":       SwitchToTab("Search"),
+            "3":       SwitchToTab("Directories"),
+            "4":       SwitchToTab("Playlists"),
+            "5":       SwitchToTab("Search"),
             "z":       ToggleRepeat,
             "x":       ToggleRandom,
             "c":       ToggleSingle,
@@ -126,55 +125,6 @@
                     (
                         size: "30%",
                         borders: "RIGHT",
-                        pane: Pane(AlbumArt),
-                    ),
-                    (
-                        size: "100%",
-                        pane: Split(
-                            direction: Vertical,
-                            panes: [
-                                (
-                                    size: "60%",
-                                    pane: Pane(Queue),
-                                ),
-                                (
-                                    borders: "TOP",
-                                    size: "40%",
-                                    pane: Pane(Cava)
-                                ),
-                            ],
-                        ),
-                    )
-                ],
-            ),
-        ),
-        (
-            name: "Queue (Mini)",
-            border_type: None,
-            pane: Split(
-                direction: Vertical,
-                panes: [
-                    (
-                         size: "60%",
-                         pane: Pane(Queue),
-                     ),
-                     (
-                         borders: "TOP",
-                         size: "40%",
-                         pane: Pane(Cava),
-                     ),
-                ],
-            ),
-        ),
-        (
-            name: "Queue (Lyrics)",
-            border_type: None,
-            pane: Split(
-                direction: Horizontal,
-                panes: [
-                    (
-                        size: "30%",
-                        borders: "RIGHT",
                         pane: Split(
                             direction: Vertical,
                             panes: [
@@ -207,6 +157,24 @@
                             ],
                         ),
                     )
+                ],
+            ),
+        ),
+       (
+            name: "Queue (Mini)",
+            border_type: None,
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (
+                         size: "60%",
+                         pane: Pane(Queue),
+                     ),
+                     (
+                         borders: "TOP",
+                         size: "40%",
+                         pane: Pane(Cava),
+                     ),
                 ],
             ),
         ),
