@@ -42,7 +42,7 @@ A reference list of installed tools, CLI utilities, and custom scripts/keybindin
 The following shortcuts are custom additions implemented on top of the default Cosmic Epoch keybindings. They rely on the shell scripts backed up in `scripts/.local/bin/`.
 
 ### Clipboard (`cliphist-cosmic`)
-*   **`Super + V` (Toggle):** clipboard picker built with cosmic for cliphist (cliphist-cosmic)[https://github.com/Mohamed-Badry/cliphist-cosmic].
+*   **`Super + V` (Toggle):** clipboard picker built with cosmic for cliphist [cliphist-cosmic](https://github.com/Mohamed-Badry/cliphist-cosmic).
 
 ### Media (`smart-playerctl`)
 Controls target the *active* or *most recent* media player rather than sending commands to all open players simultaneously.
